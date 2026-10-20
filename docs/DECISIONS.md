@@ -57,3 +57,29 @@ The supplied screenshots are tall PNG captures (1440×2497 for Desktop 1–5 and
 - Approve the Phase 0 architecture and schema/fixture contract before Phase 1 implementation.
 - Approve the final visual token samples after direct pixel sampling in Phase 1.
 - Approve the Dictionary UX proposal before Phase 7 implementation.
+
+## Phase 1 — Foundation, assets, tokens, and shell
+
+### Static foundation
+The app is a Next.js App Router static export (`output: "export"`) with strict TypeScript, no route handlers, Server Actions, middleware, cookies, headers, or other server-only runtime features. The shell includes explicit static routes for the four Phase 1 navigation destinations and the Resources placeholder; feature routes intentionally remain placeholders until their phases.
+
+### Runtime dependency boundary
+The runtime dependency set is limited to the brief: Next, React, `motion`, Zustand, and `wanakana`. Tailwind/PostCSS, TypeScript, ESLint, and type packages are development tooling. `sharp` is a development-only dependency because `scripts/trim-assets.ts` must decode RGBA PNGs, calculate alpha bounds, crop transparent padding, resize 1x/2x derivatives, and encode optimized WebP output; doing this reliably without an image library would require reimplementing a PNG/WebP codec and would not be a reversible foundation choice.
+
+### Font loading
+Josefin Sans, Noto Sans JP, and Silkscreen are loaded through `next/font/google`. Next's generated metadata does not expose a selectable regional subset for Noto Sans JP, so the font call intentionally omits `subsets` to keep Japanese glyphs available. This is not a placeholder font; the CSS fallback stack remains available if the remote font fetch is unavailable during local development.
+
+### Phase 1 visual tokens
+The sampled Phase 0 values are exposed as CSS custom properties (`--fc-*`) in `src/app/globals.css` and mapped into the Tailwind v4 theme. Components consume these variables rather than embedding sampled palette values. The home placeholder uses a CSS radial-dot texture as a reversible approximation of the reference map because no map source asset is present; loader, title scramble, and folder-field behavior are explicitly deferred to Phase 2.
+
+### Navigation and responsive behavior
+`PillNav` owns the Hiragana and Katakana disclosure menus and the Resources link. Menus use real buttons/links, `aria-expanded`, `aria-controls`, menu roles, arrow-key movement, Escape-to-close, outside-pointer dismissal, and visible focus styles. Desktop uses the measured three-pill rhythm; below 44rem the pills stack and an open menu becomes an in-flow full-width panel so the shell does not overflow horizontally.
+
+### Asset mapping and conversion
+The source PNGs under `design/source` remain immutable. The Phase 0 inferred mapping was visually checked: `Desain tanpa judul.png` is torn paper, `Group 1.png` is the landscape/grass panel, and the seven numbered exports are decorative folders. The script maps them to ASCII-safe `folder-01` … `folder-07`, `footer-paper`, and `footer-grass`, and writes 1x/2x WebP outputs under `public/folders` and `public/paper`. `docs/asset-report.json` records dimensions, alpha bounds, and before/after byte sizes. Runtime Phase 1 uses only the two footer derivatives; folder derivatives are prepared for the later home phase and are not rendered yet.
+
+### Static preview command
+Because `output: "export"` intentionally cannot be served by `next start`, the `npm start` script runs `scripts/serve-static.ts` and serves the generated `out/` directory. This keeps local preview behavior aligned with the Cloudflare static-hosting target without adding a runtime dependency. `npm run build` must run first. The package declares Node `>=22.6.0` because the preview and asset scripts use Node's stable-enough `--experimental-strip-types` execution path.
+
+### Phase 1 scope boundary
+No loader, title scramble, draggable folders, kana tables, word data, flashcards, session logic, speech adapter, dictionary, Zustand store, or `wanakana` behavior is implemented in this phase. The landing page body is intentionally placeholder content around the measured hero/copy composition.

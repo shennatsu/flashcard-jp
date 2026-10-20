@@ -1,0 +1,250 @@
+{
+  "generatedBy": "scripts/trim-assets.ts",
+  "format": "WebP",
+  "scaleRule": "1x is half the trimmed source dimensions; 2x preserves trimmed source dimensions.",
+  "assets": [
+    {
+      "source": "design/source/Desain tanpa judul (1).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 2370562,
+      "alphaBounds": {
+        "left": 384,
+        "top": 85,
+        "width": 1103,
+        "height": 910
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-01.webp",
+          "width": 552,
+          "height": 455,
+          "bytes": 74834
+        },
+        {
+          "file": "public/folders/folder-01@2x.webp",
+          "width": 1103,
+          "height": 910,
+          "bytes": 158016
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (2).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 1989489,
+      "alphaBounds": {
+        "left": 502,
+        "top": 116,
+        "width": 1066,
+        "height": 859
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-02.webp",
+          "width": 533,
+          "height": 430,
+          "bytes": 62318
+        },
+        {
+          "file": "public/folders/folder-02@2x.webp",
+          "width": 1066,
+          "height": 859,
+          "bytes": 136182
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (3).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 2047241,
+      "alphaBounds": {
+        "left": 471,
+        "top": 172,
+        "width": 1037,
+        "height": 863
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-03.webp",
+          "width": 519,
+          "height": 432,
+          "bytes": 56040
+        },
+        {
+          "file": "public/folders/folder-03@2x.webp",
+          "width": 1037,
+          "height": 863,
+          "bytes": 125932
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (4).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 1033027,
+      "alphaBounds": {
+        "left": 560,
+        "top": 295,
+        "width": 792,
+        "height": 651
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-04.webp",
+          "width": 396,
+          "height": 326,
+          "bytes": 29510
+        },
+        {
+          "file": "public/folders/folder-04@2x.webp",
+          "width": 792,
+          "height": 651,
+          "bytes": 64902
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (5).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 609363,
+      "alphaBounds": {
+        "left": 625,
+        "top": 258,
+        "width": 723,
+        "height": 598
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-05.webp",
+          "width": 362,
+          "height": 299,
+          "bytes": 26780
+        },
+        {
+          "file": "public/folders/folder-05@2x.webp",
+          "width": 723,
+          "height": 598,
+          "bytes": 65518
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (6).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 1630740,
+      "alphaBounds": {
+        "left": 513,
+        "top": 200,
+        "width": 848,
+        "height": 684
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-06.webp",
+          "width": 424,
+          "height": 342,
+          "bytes": 60934
+        },
+        {
+          "file": "public/folders/folder-06@2x.webp",
+          "width": 848,
+          "height": 684,
+          "bytes": 132892
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul (7).png",
+      "kind": "folder",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 649925,
+      "alphaBounds": {
+        "left": 632,
+        "top": 316,
+        "width": 656,
+        "height": 472
+      },
+      "outputs": [
+        {
+          "file": "public/folders/folder-07.webp",
+          "width": 328,
+          "height": 236,
+          "bytes": 20236
+        },
+        {
+          "file": "public/folders/folder-07@2x.webp",
+          "width": 656,
+          "height": 472,
+          "bytes": 47260
+        }
+      ]
+    },
+    {
+      "source": "design/source/Desain tanpa judul.png",
+      "kind": "paper",
+      "sourceWidth": 1920,
+      "sourceHeight": 1080,
+      "sourceBytes": 237128,
+      "alphaBounds": {
+        "left": 83,
+        "top": 148,
+        "width": 1713,
+        "height": 835
+      },
+      "outputs": [
+        {
+          "file": "public/paper/footer-paper.webp",
+          "width": 857,
+          "height": 418,
+          "bytes": 18092
+        },
+        {
+          "file": "public/paper/footer-paper@2x.webp",
+          "width": 1713,
+          "height": 835,
+          "bytes": 41890
+        }
+      ]
+    },
+    {
+      "source": "design/source/Group 1.png",
+      "kind": "paper",
+      "sourceWidth": 1670,
+      "sourceHeight": 949,
+      "sourceBytes": 764477,
+      "alphaBounds": {
+        "left": 68,
+        "top": 123,
+        "width": 1425,
+        "height": 725
+      },
+      "outputs": [
+        {
+          "file": "public/paper/footer-grass.webp",
+          "width": 713,
+          "height": 363,
+          "bytes": 41330
+        },
+        {
+          "file": "public/paper/footer-grass@2x.webp",
+          "width": 1425,
+          "height": 725,
+          "bytes": 98916
+        }
+      ]
+    }
+  ]
+}
