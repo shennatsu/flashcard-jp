@@ -1,0 +1,280 @@
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: clamp(4.5rem, 9vw, 8rem) var(--fc-page-gutter) clamp(7rem, 12vw, 12rem);
+  background: var(--fc-canvas);
+}
+
+.content {
+  width: min(100%, 84rem);
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  color: var(--fc-ink);
+  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.3rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.titleKana {
+  display: inline-block;
+  margin-left: 0.18em;
+  font-family: var(--font-kana), "Noto Sans JP", sans-serif;
+  font-size: 0.78em;
+  letter-spacing: 0.02em;
+}
+
+.navigationRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: clamp(2.25rem, 5vw, 4rem);
+}
+
+.segmentGroup {
+  display: flex;
+  min-height: 4.125rem;
+  overflow: hidden;
+  border-radius: var(--fc-radius-nav);
+  background: var(--fc-control);
+}
+
+.segment {
+  display: inline-flex;
+  min-width: 8rem;
+  min-height: 4.125rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--fc-radius-nav);
+  padding: 0.75rem 1.35rem;
+  background: transparent;
+  color: var(--fc-label);
+  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.segmentGroup:first-child .segment {
+  min-width: 10.5rem;
+}
+
+.segmentGroup:last-child .segment {
+  min-width: 7.4rem;
+}
+
+.segment:hover {
+  background: rgb(51 42 40 / 68%);
+}
+
+.segment:active {
+  transform: scale(0.98);
+}
+
+.segmentActive {
+  background: var(--fc-active);
+  color: var(--fc-label);
+}
+
+.segmentActive:hover {
+  background: var(--fc-active);
+}
+
+.setDescription {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.grid {
+  margin-top: clamp(4rem, 8vw, 7.5rem);
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: clamp(4rem, 7vw, 7rem) clamp(0.35rem, 1.8vw, 1.7rem);
+  margin-top: 2rem;
+}
+
+.column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columnToggle {
+  display: flex;
+  width: min(100%, 7.4rem);
+  min-height: 4rem;
+  align-items: center;
+  justify-content: flex-start;
+  border: 0;
+  border-radius: 2.4rem;
+  padding: 0.28rem;
+  background: var(--fc-control);
+  color: var(--fc-label);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.columnToggle:hover {
+  background: var(--fc-active);
+}
+
+.columnToggle:active {
+  transform: scale(0.96);
+}
+
+.columnToggleActive {
+  justify-content: flex-end;
+  background: var(--fc-active);
+}
+
+.toggleKnob {
+  display: block;
+  width: 3.45rem;
+  height: 3.45rem;
+  flex: 0 0 3.45rem;
+  border-radius: 50%;
+  background: var(--fc-utility);
+}
+
+.entries {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2.25rem, 4vw, 4rem);
+  margin-top: 1.75rem;
+}
+
+.entry {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+  color: var(--fc-ink);
+  text-align: center;
+}
+
+.character {
+  display: block;
+  font-family: var(--font-kana), "Noto Sans JP", sans-serif;
+  font-size: clamp(2.75rem, 4.8vw, 4.25rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.romaji {
+  display: block;
+  margin-top: 0.65rem;
+  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.emptyState {
+  margin: 5rem auto 0;
+  color: rgb(0 0 0 / 72%);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .main {
+    padding-top: 3.5rem;
+  }
+
+  .navigationRow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .segmentGroup {
+    width: 100%;
+  }
+
+  .segment {
+    min-width: 0;
+    flex: 1 1 0;
+    padding-inline: 0.75rem;
+  }
+
+  .segmentGroup:first-child .segment,
+  .segmentGroup:last-child .segment {
+    min-width: 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3.5rem 0.75rem;
+    margin-top: 3.5rem;
+  }
+
+  .columnToggle {
+    min-height: 3.5rem;
+    border-radius: 2rem;
+  }
+
+  .toggleKnob {
+    width: 2.95rem;
+    height: 2.95rem;
+    flex-basis: 2.95rem;
+  }
+
+  .entries {
+    gap: 2.5rem;
+    margin-top: 1.35rem;
+  }
+}
+
+@media (max-width: 31rem) {
+  .title {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .titleKana {
+    display: block;
+    margin: 0.35rem 0 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 1.25rem;
+  }
+
+  .character {
+    font-size: clamp(2.65rem, 13vw, 3.5rem);
+  }
+
+  .romaji {
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segment,
+  .columnToggle {
+    transition: none;
+  }
+}

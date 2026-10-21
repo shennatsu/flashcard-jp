@@ -100,3 +100,17 @@ The seven folder assets are rendered as decorative, non-focusable toys only. Pos
 
 ### Phase 2 scope boundary
 Phase 2 integrates only the home loader, title scramble, ASCII asset generation, shared motion presets, and decorative folder field. Kana data, word data, flashcards, speech, dictionary, session logic, and later phases remain intentionally untouched.
+
+## Phase 3 — Kana data and Characters page
+
+### Canonical kana tables
+Phase 3 adds pure TypeScript kana contracts and local tables for both scripts. Each script has exactly 104 entries: Basic 46, Dakuten 25, and Combination 33. Every entry has a stable ASCII-safe ID, script, character, accepted romaji spellings, consonant-family group, and one exclusive declared set. The visible set label remains `Combination`; the reference's `Component` wording is not carried into the product.
+
+### Grouped Characters view
+The Characters route consumes the canonical `getKanaColumns` helper rather than duplicating table data. It renders the selected script's Basic, Combination, or Dakuten set, shows each character with its canonical romaji spelling, and keeps the Words control as navigation to the existing held placeholder route. Column toggles are enhancement controls: all groups are active by default, selected groups filter the grid, and the grid remains usable without any word/session functionality.
+
+### Column-toggle persistence
+Active consonant groups are stored in versioned-by-key localStorage namespaces scoped by script and set (`flashcard-jp:characters:<script>:<set>:groups`). Invalid or unavailable storage falls back to all known groups; an intentionally empty JSON array remains empty. Persistence helpers are pure and covered by focused tests. No account, API, backend, word data, session engine, answer matching, speech, dictionary, or deployment work is included in Phase 3.
+
+### Phase 3 responsive/accessibility boundary
+Characters controls use real links/buttons, `aria-pressed`, accessible group labels, visible focus styles, and the existing reduced-motion CSS policy. The grid reflows at narrower widths without horizontal overflow; the static route remains generated only for Hiragana and Katakana. The supplied desktop screenshot establishes the visual hierarchy; mobile behavior is a deliberate responsive adaptation, not a claim that a mobile reference exists.

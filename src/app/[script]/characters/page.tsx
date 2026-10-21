@@ -1,25 +1,23 @@
 import { notFound } from "next/navigation";
 
-import { PhaseOnePlaceholder } from "@/components/ui/PhaseOnePlaceholder";
-
-type Script = "hiragana" | "katakana";
+import { CharactersPage } from "@/components/characters/CharactersPage";
+import type { Script } from "@/lib/kana";
 
 type CharactersPageProps = {
   readonly params: Promise<{ script: string }>;
 };
 
-const scripts: readonly Script[] = ["hiragana", "katakana"];
+const scripts = ["hiragana", "katakana"] as const satisfies readonly Script[];
 
 export function generateStaticParams(): Array<{ script: Script }> {
   return scripts.map((script) => ({ script }));
 }
 
-export default async function CharactersPage({ params }: CharactersPageProps) {
+export default async function CharactersRoute({ params }: CharactersPageProps) {
   const { script } = await params;
   if (!scripts.includes(script as Script)) {
     notFound();
   }
 
-  const label = script === "hiragana" ? "Hiragana" : "Katakana";
-  return <PhaseOnePlaceholder title={`${label} Characters`} />;
+  return <CharactersPage script={script as Script} />;
 }
