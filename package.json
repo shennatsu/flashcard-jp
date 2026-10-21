@@ -8,12 +8,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run assets:trim && next build",
+    "build": "npm run assets:trim && npm run assets:ascii && next build",
     "start": "node --experimental-strip-types scripts/serve-static.ts",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "node --test",
-    "assets:trim": "node --experimental-strip-types scripts/trim-assets.ts"
+    "test": "node --experimental-strip-types --test",
+    "assets:trim": "node --experimental-strip-types scripts/trim-assets.ts",
+    "assets:ascii": "node --experimental-strip-types scripts/build-ascii.ts"
   },
   "dependencies": {
     "motion": "14.4.0",

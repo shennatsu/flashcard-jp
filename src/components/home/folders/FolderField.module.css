@@ -1,0 +1,111 @@
+.field {
+  position: relative;
+  width: 100%;
+  min-height: clamp(34rem, 60vw, 48rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.absoluteField {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+.folder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(7.5rem, 14vw, 14rem);
+  margin: 0;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+  opacity: 0;
+  animation: folderEntrance 360ms ease-out both;
+  will-change: transform, opacity;
+}
+
+.folderReduced {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes folderEntrance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.folder:active {
+  cursor: grabbing;
+}
+
+.folderPending {
+  visibility: hidden;
+}
+
+.folderArt {
+  display: block;
+  pointer-events: none;
+}
+
+.folderImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.resetButton {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgb(51 42 40 / 24%);
+  border-radius: 999px;
+  background: rgb(234 233 229 / 84%);
+  color: var(--fc-active, #332a28);
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1;
+  backdrop-filter: blur(0.35rem);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.resetButton:hover {
+  background: var(--fc-utility, #d9d9d9);
+}
+
+.resetButton:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 44rem) {
+  .field {
+    min-height: clamp(31rem, 116vw, 38rem);
+  }
+
+  .folder {
+    width: clamp(7rem, 30vw, 9.5rem);
+  }
+
+  .resetButton {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resetButton {
+    transition: none;
+  }
+}

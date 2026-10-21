@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "columns": 80,
+  "rows": 32,
+  "frames": [
+    {
+      "file": "/ascii/frame-00.txt",
+      "progress": 0
+    },
+    {
+      "file": "/ascii/frame-01.txt",
+      "progress": 0.14
+    },
+    {
+      "file": "/ascii/frame-02.txt",
+      "progress": 0.28
+    },
+    {
+      "file": "/ascii/frame-03.txt",
+      "progress": 0.42
+    },
+    {
+      "file": "/ascii/frame-04.txt",
+      "progress": 0.56
+    },
+    {
+      "file": "/ascii/frame-05.txt",
+      "progress": 0.7
+    },
+    {
+      "file": "/ascii/frame-06.txt",
+      "progress": 0.84
+    },
+    {
+      "file": "/ascii/frame-07.txt",
+      "progress": 1
+    }
+  ]
+}
